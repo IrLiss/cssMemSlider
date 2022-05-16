@@ -299,3 +299,115 @@ label:hover .point{
 .footer-text p span {
     color: #b41225;
 }
+
+
+/*==============================
+      Media Queries
+==============================*/
+@media (min-width: 1920px) {
+    .slider-wrapper {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    h1 {
+        font-size: 2.5em;
+        padding-top: 3vh;
+    }
+
+    label {
+        height: 6vw;
+    }
+
+    .point {
+        border-width: .5vw;
+    }
+
+    label:hover .point {
+        border-width: .5vw;
+    }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1023px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+}
+
+@media (min-device-width: 375px) and (max-device-width: 736px) {
+    body {
+        display: block;
+    }
+
+    h1 {
+        padding-top: 5vh;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p,
+    .description {
+        font-size: 1em;
+    }
+
+    .mem-img {
+        height: 240px;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+
+    label {
+        height: 7.5vh;
+    }
+
+    .point {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .slider-wrapper {
+        width: 75vw;
+        margin: 0 auto;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+}
