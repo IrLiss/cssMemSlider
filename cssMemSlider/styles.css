@@ -72,8 +72,8 @@ p {
     fill: #000;
     display: block;
     margin: 1vh auto;
-    width: 25px;
-    height: 15px;
+    width: 2.5vh;
+    height: 1.4vh;
 }
 
 /*==============================
@@ -136,7 +136,7 @@ input:last-of-type:checked ~ .slide-wrapper .slide {
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    height: 540px;
+    height: 50vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -211,7 +211,7 @@ input:checked ~ .content-wrapper .description {
 
 label{
     width: 100%;
-    height: 9.5vh;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -220,8 +220,8 @@ label{
 
 .point {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 1vw;
+    height: 1vw;
     margin: 0 5px;
     border: .25vw solid #b41225;
     border-radius: 50%;
@@ -234,6 +234,10 @@ input:nth-of-type(2):checked ~ .content-wrapper label:nth-of-type(2) .point,
 input:nth-of-type(3):checked ~ .content-wrapper label:nth-of-type(3) .point,
 input:last-of-type:checked ~ .content-wrapper label:last-of-type .point {
     background-color: transparent;
+}
+
+label:active .point{
+    transform: scale(75%);
 }
 
 label:hover .point{
@@ -255,11 +259,11 @@ label:hover .point{
 
 .footer-line {
     width: 100%;
-    height: 20px;
+    height: 1vw;
     background-image: url(icon/br-footer.svg);
     background-repeat: repeat-x;
     background-position: top center;
-    border-top: 7.5px solid #b41225;
+    border-top: .5vw solid #b41225;
 }
 
 .social-links {
@@ -269,11 +273,11 @@ label:hover .point{
 }
 
 .social-links a {
-    margin: 1.5vh 1vw;
+    margin: 1vh 1vw;
 }
 
 .social-links a svg {
-    width: 50px;
+    width: 2vw;
     height: 100%;
     transition: all .5s 0s ease;
     padding: 0;
@@ -308,12 +312,20 @@ label:hover .point{
     .slider-wrapper {
         width: 50vw;
     }
+
+    .mem-img {
+        height: 30vw;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 1280px) {
+@media (min-width: 768px) and (max-width: 1279px) {
     h1 {
         font-size: 2.5em;
         padding-top: 3vh;
+    }
+
+    .mem-img {
+        height: 70vw;
     }
 
     label {
@@ -327,6 +339,11 @@ label:hover .point{
     label:hover .point {
         border-width: .5vw;
     }
+
+    .footer-line {
+        height: 1.5vw;
+        border-top: 0.75vw solid #b41225;
+    }
 }
 
 @media (min-device-width: 768px) and (max-device-width: 1023px) {
@@ -339,6 +356,15 @@ label:hover .point{
     .points-wrapper {
         margin: 0 auto;
     }
+
+    .mem-img {
+        height: 70vw;
+    }
+
+    .footer-line {
+        height: 5vw;
+        border-top: 1vw solid #b41225;
+    }
 }
 
 @media (min-device-width: 375px) and (max-device-width: 736px) {
@@ -350,6 +376,10 @@ label:hover .point{
         padding-top: 5vh;
     }
 
+    .mem-img {
+        height: 70vw;
+    }
+
     .content-wrapper {
         flex-direction: column-reverse;
         align-items: flex-start;
@@ -358,6 +388,15 @@ label:hover .point{
 
     .points-wrapper {
         margin: 0 auto;
+    }
+
+    .footer-line {
+        height: 2.5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 5vw;
     }
 }
 
@@ -372,7 +411,7 @@ label:hover .point{
     }
 
     .mem-img {
-        height: 240px;
+        height: 70vw;
     }
 
     .content-wrapper {
@@ -390,8 +429,17 @@ label:hover .point{
     }
 
     .point {
-        width: 10px;
-        height: 10px;
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .footer-line {
+        height: 5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 5vw;
     }
 }
 
@@ -409,5 +457,19 @@ label:hover .point{
 
     .points-wrapper {
         margin: 0 auto;
+    }
+
+    .point {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .footer-line {
+        height: 5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 10vw;
     }
 }
