@@ -13,7 +13,6 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: "Arial", sans-serif;
-    font-size: 16px;
     background-color: #fff;
     color: #4c4c4c;
 }
@@ -26,15 +25,6 @@ a {
 div {
     margin: 0;
     padding: 0;
-}
-
-.style-bg-slider {
-    position: absolute;
-    height: 60vh;
-    width: 45%;
-    background-image: url(icon/br-footer.svg);
-    background-repeat: repeat;
-    opacity: 0.8;
 }
 
 /*==============================
@@ -82,7 +72,7 @@ p {
 
 .mem-slider {
     position: relative;
-    filter: drop-shadow(0 0 10px #0003);
+    filter: drop-shadow(0 0 1vh #0003);
 }
 
 .slider-wrapper {
@@ -98,15 +88,6 @@ input {
     overflow-x: hidden;
     margin-bottom: 2vh;
     border-radius: 1vh;
-}
-
-.slide-line {
-    position: absolute;
-    width: .2vh;
-    height: 15vh;
-    margin: -5vh 0 0 5vw;
-    background-color: #b41225;
-    z-index: 1050;
 }
 
 .slide{
@@ -222,7 +203,7 @@ label{
     display: inline-block;
     width: 1vw;
     height: 1vw;
-    margin: 0 5px;
+    margin: 0 .5vw;
     border: .25vw solid #b41225;
     border-radius: 50%;
     background-color: #b41225;
@@ -237,7 +218,7 @@ input:last-of-type:checked ~ .content-wrapper label:last-of-type .point {
 }
 
 label:active .point{
-    transform: scale(75%);
+    transform: scale(.5);
 }
 
 label:hover .point{
@@ -344,6 +325,10 @@ label:hover .point{
         height: 1.5vw;
         border-top: 0.75vw solid #b41225;
     }
+
+    .social-links a svg {
+        width: 5vw;
+    }
 }
 
 @media (min-device-width: 768px) and (max-device-width: 1023px) {
@@ -365,9 +350,13 @@ label:hover .point{
         height: 5vw;
         border-top: 1vw solid #b41225;
     }
+
+    .social-links a svg {
+        width: 5vw;
+    }
 }
 
-@media (min-device-width: 375px) and (max-device-width: 736px) {
+@media (max-device-width: 767px) {
     body {
         display: block;
     }
