@@ -12,6 +12,7 @@ body {
     justify-content: space-between;
     margin: 0;
     min-height: 100vh;
+    font-size: 16px;
     font-family: "Arial", sans-serif;
     background-color: #fff;
     color: #4c4c4c;
@@ -25,6 +26,15 @@ a {
 div {
     margin: 0;
     padding: 0;
+}
+
+.style-bg-slider {
+    position: absolute;
+    height: 60vh;
+    width: 45%;
+    background-image: url(icon/br-footer.svg);
+    background-repeat: repeat;
+    opacity: 0.8;
 }
 
 /*==============================
@@ -95,6 +105,15 @@ input {
     grid-auto-flow: column;
     grid-template-columns: repeat(4, 100%);
     transition: transform .75s 0s ease;
+}
+
+.slide-line {
+    position: absolute;
+    width: .2vh;
+    height: 15vh;
+    margin: -5vh 0 0 5vw;
+    background-color: #b41225;
+    z-index: 1050;
 }
 
 input:first-of-type:checked ~ .slide-wrapper .slide {
