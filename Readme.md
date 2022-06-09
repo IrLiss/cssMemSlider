@@ -1,6 +1,6 @@
 ## 🚀 Welcome to my new project RSS Mem Slider!
 
-Deployment project:  https://irliss.github.io/cssMemSlider/cssMemSlider/index.html
+Deployment project:  https://irliss.github.io/cssMemSlider/cssMemSlider/
 
 #### Screen resolution in the context of responsive design for this project
 
