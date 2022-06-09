@@ -1,0 +1,483 @@
+/*=====================================================================
+               Project Mem Slider
+=====================================================================*/
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    background-color: #fff;
+    color: #4c4c4c;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.style-bg-slider {
+    position: absolute;
+    height: 60vh;
+    width: 45%;
+    background-image: url(icon/br-footer.svg);
+    background-repeat: repeat;
+    opacity: 0.8;
+}
+
+/*==============================
+      Section Header
+==============================*/
+.header {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1000;
+}
+
+h1 {
+    color: #b41225;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 125%;
+    letter-spacing: 0.1em;
+    font-size: 3em;
+    text-align: center;
+    padding: 4vh 5vw 1vh 5vw;
+    margin: 0;
+}
+
+p {
+    color: #221f1f;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0 5vw;
+    text-align: center;
+}
+
+.line-zig-zag {
+    fill: #000;
+    display: block;
+    margin: 1vh auto;
+    width: 2.5vh;
+    height: 1.4vh;
+}
+
+/*==============================
+      Section Slider
+==============================*/
+
+.mem-slider {
+    position: relative;
+    filter: drop-shadow(0 0 1vh #0003);
+}
+
+.slider-wrapper {
+    width: 75vw;
+    margin: 2.25vh auto;
+}
+
+input {
+    display: none;
+}
+
+.slide-wrapper {
+    overflow-x: hidden;
+    margin-bottom: 2vh;
+    border-radius: 1vh;
+}
+
+.slide{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 100%);
+    transition: transform .75s 0s ease;
+}
+
+.slide-line {
+    position: absolute;
+    width: .2vh;
+    height: 15vh;
+    margin: -5vh 0 0 5vw;
+    background-color: #b41225;
+    z-index: 1050;
+}
+
+input:first-of-type:checked ~ .slide-wrapper .slide {
+    transform: translateX(0%);
+}
+
+input:nth-of-type(2):checked ~ .slide-wrapper .slide {
+    transform: translateX(-100%);
+}
+
+input:nth-of-type(3):checked ~ .slide-wrapper .slide {
+    transform: translateX(-200%);
+}
+
+input:last-of-type:checked ~ .slide-wrapper .slide {
+    transform: translateX(-300%);
+}
+
+.mem-img {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 50vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.img1 {
+    background-image: url(img/js-mem.jpg);
+}
+
+.img2 {
+    background-image: url(img/chrome.jpg);
+}
+
+.img3 {
+    background-image: url(img/developer.jpg);
+}
+
+.img4 {
+    background-image: url(img/users.jpg);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.text-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 100%);
+    transition: transform .5s 0s ease;
+}
+
+input:first-of-type:checked ~ .content-wrapper .text-content {
+    transform: translateX(0%);
+}
+
+input:nth-of-type(2):checked ~ .content-wrapper .text-content {
+    transform: translateX(-100%);
+}
+
+input:nth-of-type(3):checked ~ .content-wrapper .text-content {
+    transform: translateX(-200%);
+}
+
+input:last-of-type:checked ~ .content-wrapper .text-content {
+    transform: translateX(-300%);
+}
+
+.description {
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 125%;
+    opacity: 0;
+    transition: opacity .5s 0s ease;
+}
+
+input:checked ~ .content-wrapper .description {
+    opacity: 1;
+    transition: opacity .5s .5s ease;
+}
+
+.points-wrapper {
+    display: flex;
+}
+
+label{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.point {
+    display: inline-block;
+    width: 1vw;
+    height: 1vw;
+    margin: 0 .5vw;
+    border: .25vw solid #b41225;
+    border-radius: 50%;
+    background-color: #b41225;
+    transition: all .25s ease;
+}
+
+input:first-of-type:checked ~ .content-wrapper label:first-of-type .point,
+input:nth-of-type(2):checked ~ .content-wrapper label:nth-of-type(2) .point,
+input:nth-of-type(3):checked ~ .content-wrapper label:nth-of-type(3) .point,
+input:last-of-type:checked ~ .content-wrapper label:last-of-type .point {
+    background-color: transparent;
+}
+
+label:active .point{
+    transform: scale(.5);
+}
+
+label:hover .point{
+    background-color: #da6e7a;
+    border: .25vw solid #da6e7a;
+}
+
+/*==============================
+        Section Footer
+==============================*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background-color: #221f1f;
+    text-align: center;
+}
+
+.footer-line {
+    width: 100%;
+    height: 1vw;
+    background-image: url(icon/br-footer.svg);
+    background-repeat: repeat-x;
+    background-position: top center;
+    border-top: .5vw solid #b41225;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.social-links a {
+    margin: 1vh 1vw;
+}
+
+.social-links a svg {
+    width: 2vw;
+    height: 100%;
+    transition: all .5s 0s ease;
+    padding: 0;
+}
+
+.icon:hover {
+    fill: #fff;
+}
+
+.footer-text {
+    background-color: #000;
+    padding: 0;
+}
+
+.footer-text p {
+    font-size: 0.8125em;
+    font-weight: 400;
+    line-height: 160%;
+    color: #c2c2c2;
+    margin: 2.5vh 2.5vw;
+}
+
+.footer-text p span {
+    color: #b41225;
+}
+
+
+/*==============================
+      Media Queries
+==============================*/
+@media (min-width: 1920px) {
+    .slider-wrapper {
+        width: 50vw;
+    }
+
+    .mem-img {
+        height: 30vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    h1 {
+        font-size: 2.5em;
+        padding-top: 3vh;
+    }
+
+    .mem-img {
+        height: 70vw;
+    }
+
+    label {
+        height: 6vw;
+    }
+
+    .point {
+        border-width: .5vw;
+    }
+
+    label:hover .point {
+        border-width: .5vw;
+    }
+
+    .footer-line {
+        height: 1.5vw;
+        border-top: 0.75vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 5vw;
+    }
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1023px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+
+    .mem-img {
+        height: 70vw;
+    }
+
+    .footer-line {
+        height: 5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 5vw;
+    }
+}
+
+@media (max-device-width: 767px) {
+    body {
+        display: block;
+    }
+
+    h1 {
+        padding-top: 5vh;
+    }
+
+    .mem-img {
+        height: 70vw;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+
+    .footer-line {
+        height: 2.5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 5vw;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p,
+    .description {
+        font-size: 1em;
+    }
+
+    .mem-img {
+        height: 70vw;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+
+    label {
+        height: 7.5vh;
+    }
+
+    .point {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .footer-line {
+        height: 5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 5vw;
+    }
+}
+
+@media (max-width: 320px) {
+    .slider-wrapper {
+        width: 75vw;
+        margin: 0 auto;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 2.5vh;
+    }
+
+    .points-wrapper {
+        margin: 0 auto;
+    }
+
+    .point {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .footer-line {
+        height: 5vw;
+        border-top: 1vw solid #b41225;
+    }
+
+    .social-links a svg {
+        width: 10vw;
+    }
+}
