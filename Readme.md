@@ -1,4 +1,4 @@
-## 🚀 Welcome to my new project RSS Mem Slider!
+## 🚀 Welcome to my new project Mem Slider!
 
 Deployment project:  https://irliss.github.io/cssMemSlider/cssMemSlider/
 
